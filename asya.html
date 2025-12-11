@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Asyaaa!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #ffecd2);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        p {
+            font-size: 1.5em;
+            line-height: 1.6;
+            color: #d5007a;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .heart {
+            position: absolute;
+            color: #ff1493;
+            font-size: 2em;
+            animation: fall 5s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        button {
+            background: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #d5007a;
+        }
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="container">
+        <h1>Selamat Ulang Tahun, Asyaaa! 🎉</h1>
+        <p>Haii sayangggnya akuu, bertambahnya usia kamu Semoga kamu makin cantik, makin lucu, dan makin sayang sama aku. Kalau enggak… ya harus tetep sayang. I Love Youu moree 💖</p>
+        <p>Klik tombol di bawah untuk melihat kejutan kecil!</p>
+        <button onclick="showSurprise()">Klik Saya!</button>
+        <div id="surprise" style="display: none; margin-top: 20px;">
+            <p> Haiii Asyaaa!
+                Kalau kamu baca ini… berarti kamu sudah pencet tombol surprise-nya.
+                Tenang, yang nyeremin cuma tugas kuliah, bukan aku.
+
+                Hari ini spesial banget, karena cewek paling cantik, paling lucu, dan paling bikin aku jatuh cinta lagi tiap hari… ulang tahun.
+
+                Aku sengaja siapin ini buat kamu, bukan karena mahal atau mewah, tapi karena kamu layak ngerasain hal-hal kecil yang bikin kamu senyum.
+
+                Semoga kejutan kecil ini bisa jadi bagian dari cerita indah kamu hari ini.
+                Selamat ulang tahun, Asya sayang.
+                Semoga harimu penuh bahagia, dan semoga aku bisa terus ada di setiap momen yang kamu rayakan. </p>
+        </div>
+        <audio controls autoplay loop>
+            <source src="https://youtu.be/lB8ASupNtlw?si=0_IFPcBQu2RYx83n" type="audio/wav">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+    </div>
+
+    <script>
+        // Fungsi untuk animasi hati jatuh
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('hearts').appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+        setInterval(createHeart, 300);
+
+        // Fungsi untuk kejutan
+        function showSurprise() {
+            document.getElementById('surprise').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
